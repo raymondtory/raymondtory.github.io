@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login Page</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/indexStyle.css">
+    <link rel="stylesheet" href="./styles/menuStyle.css">
+    <link rel="stylesheet" href="./styles/slide.css">
+    <link rel="stylesheet" href="./styles/contentStyle.css">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            width: 100%;
+        }
+
+        .wrapper {
+            width: 100%;
+            height: 100%;
+
+        }
+
+        @media screen and (max-width:1200px) {
+            .nav {
+                display: none;
+            }
+
+            .header {
+                padding: 10px;
+            }
+
+            .menu {
+                right: -35vw;
+                display: flex;
+            }
+            .item p{
+            padding:20px 60px;
+            font-size: 22px;
+            letter-spacing: 3px;
+            line-height:30px;
+            text-indent:45px;
+        }
+
+        }
+
+        @media screen and (min-width:1200px) {
+            .menu {
+                display: none;
+            }
+
+            .navHamburgerButton {
+                display: none
+            }
+        }
+
+        .menuactive {
+            right: 0vw;
+            transition: 1s;
+
+        }
+
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="containerLogo">
+                <a href="#"><img src="../images/EricaLo2.jpg.png"></a>
+                <a href="#">
+                    <h1>瑩瑩網站</h1>
+                </a>
+
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="#">關於我</a></li>
+                    <li><a href="#">購物網站</a></li>
+                    <li><a href="#">會員專區</a></li>
+                </ul>
+                |
+                <ul>
+                    <li><a href="#">註冊</a></li>
+                    <li><a href="#">登入</a></li>
+                </ul>
+            </div>
+            <div class="navHamburgerButton" id="navHamburgerButton">
+
+                <img src="../images/ham1.png" alt="無法取得漢堡">
+
+            </div>
+        </div>
+        <div id="menu" class="menu">
+            <div class="menuHeader">
+                <h3>Menu</h3>
+            </div>
+            <div class="menuItemContainer">
+                <ul class="menuNavItem">
+                    <li><a href="#">關於我</a></li>
+                    <li><a href="#">購物網站</a></li>
+                    <li><a href="#">會員專區</a></li>
+                </ul>
+                <ul class="menuLoginItem">
+                    <li><a href="#">註冊</a></li>
+                    <li style="background-color:blueviolet"><a href="#" style="color:aliceblue">登入</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="slide">
+            <ul class="slide_img transition" id="slideImg">
+                <li><img src="../images/back1.jpg" alt=""></li>
+                <li><img src="../images/back2.jpg" alt=""></li>
+                <li><img src="../images/back3.jpg" alt=""></li>
+            </ul>
+            <ul class="slide_node" id="slideNode">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="item">
+                <div>
+                    <img src="../images/dongHwa.png" alt="">
+                </div>
+                <p>數百名來自南投各地的公益團體齊聚寶島時代村共同圍爐，江欽良表示：鄉親們的支持與鼓勵是他努力向前的動力！展望2023年希望台灣能戰勝疫情、社會更加和諧安定，大家過著幸福美滿的生活。寶島時代村是全台最大懷舊樂園，占地4500坪，創辦以來讓許多遊客感受到昔日寶島風光，期許寶島時代村能在不久的將來，將以嶄新面貌呈現在社會大眾面前！</p>
+            </div>
+            <div class="item">
+                <div>
+                    <img src="../images/chineseCulture.png" alt="">
+                </div>
+                <p>數百名來自南投各地的公益團體齊聚寶島時代村共同圍爐，江欽良表示：鄉親們的支持與鼓勵是他努力向前的動力！展望2023年希望台灣能戰勝疫情、社會更加和諧安定，大家過著幸福美滿的生活。寶島時代村是全台最大懷舊樂園，占地4500坪，創辦以來讓許多遊客感受到昔日寶島風光，期許寶島時代村能在不久的將來，將以嶄新面貌呈現在社會大眾面前！</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script>
+
+        $("#navHamburgerButton").click(function () {
+
+            $("#menu").toggleClass("menuactive");
+
+        })
+
+
+    </script>
+    <script>
+        let slideWidth=800;
+        $("#slideNode li").eq(0).css("background","#fff")
+        $("#slideNode li").mouseenter(function(event){
+          // console.log("mouseenter")
+          // console.log($(this))
+          let index=$(this).index();
+          let slideMove=0-slideWidth*index;
+          // console.log(index, slideMove)
+          $("#slideImg").css("left", slideMove)
+          $(this).css("background","#fff")
+          .siblings().css("background", "none")
+        })
+      </script>
+</body>
+
+</html>

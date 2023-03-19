@@ -1,0 +1,63 @@
+.menu{
+    position:fixed;
+    height: 100vh;
+    width: 35vw;
+    right:0px;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: column;
+    z-index:50;
+    transition: 1s;
+}
+
+.menuHeader{
+    width: 100%;
+    height: 100px;
+    background-color: purple;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+.menuHeader h3{
+    font-size: 30px;
+    color:azure
+}
+.menuItemContainer{
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:antiquewhite
+}
+.menuNavItem{
+    font-size: 30px;
+    
+}
+.menuNavItem li{
+    margin:15px;
+    border:5px #FFF outset;
+    padding:20px;
+    text-align: center;
+    
+}
+.menuNavItem li a{
+    text-decoration: none;
+    color:blueviolet;
+    font-weight: bold;
+    
+}
+.menuLoginItem{
+    display:flex;
+}
+.menuLoginItem li{
+    margin:10px;
+    padding:15px;
+    border:5px #FFF outset;
+
+}
+.menuLoginItem li a{
+    text-decoration: none;
+    color:blueviolet;
+    font-weight: bold;
+}
